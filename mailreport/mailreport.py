@@ -35,7 +35,7 @@ def sendmail(mailserver=None, email=None,password = None,to = None,cc = None, bc
         host = 'smtp.mail.outlook.com'
         port = 587
     msg = MIMEMultipart()
-    msg.attach(MIMEText(message, 'plain'))
+    msg.attach(MIMEText(str(message or ''), 'plain'))
     msg['Subject'] = subject
     msg['From'] = email
     msg['To'] = ', '.join(to)
